@@ -3,15 +3,21 @@
 <head>
     <meta charset="utf-8">
     <title>Hello world</title>
-    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <link rel="manifest" href="manifest.webmanifest">
+    <script src="index.js" defer></script>
 </head>
 
 <body>
     <h4>Hello world</h4>
     <button class="add-button">Add to desktop</button>
-</body>
-    
-    
-
-</html>
+    <div class="ui grid">
+        <div class="eight wide column">
+            <i class="ui upload icon"></i>
+            <input type="file" accept="image/*" onchange="semantic_ui_show_image(event)">
+        </div>
+        <div class="eight wide column">
+            <img id="image">
+        </div>
+        <script type"text/javascript"> function semantic_ui_show_image(event) { var reader=new FileReader(); reader.onload=function(){ var output=document.getElementById('image'); output.src=reader.result; } reader.readAsDataURL(event.target.files[0]); } </script> </body> </html>

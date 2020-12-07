@@ -14,4 +14,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addBtn.style.display = 'block';
 
 });
-
